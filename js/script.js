@@ -11,7 +11,7 @@ const container = document.querySelector('.container');
     const numbersBlacklist = [];
 
     reset();
-
+  let = 0;
     function init() {
       for (let i = 1; i <= 100; i++) {
         const randomNumber = getUniqueRandomNumber(1, 100);
@@ -61,8 +61,9 @@ const container = document.querySelector('.container');
       btn.innerHTML = 'START';
       btn.addEventListener('click', function () {
         container.innerHTML = '';
-        // numbersBlacklist.length = 0; 
+        numbersBlacklist.length = 0; 
         init();
+        this.remove();
       });
       return btn;
     }
@@ -72,7 +73,7 @@ const container = document.querySelector('.container');
       let isValidNumber = false;
 
       while (!isValidNumber) {
-        randomNumber = (min, max);
+        randomNumber = getRandomNumber(min, max);
         if (!numbersBlacklist.includes(randomNumber)) {
           numbersBlacklist.push(randomNumber);
           isValidNumber = true;
